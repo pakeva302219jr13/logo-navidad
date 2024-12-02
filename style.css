@@ -1,0 +1,417 @@
+
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #001f3f, #0074D9);
+    animation: gradient 10s infinite alternate;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Animación del fondo */
+  @keyframes gradient {
+    0% {
+      background: linear-gradient(to bottom, #001f3f, #0074D9);
+    }
+    50% {
+      background: linear-gradient(to bottom, #0074D9, #ff0000);
+    }
+    100% {
+      background: linear-gradient(to bottom, #00509e, #00ff00);
+    }
+  }
+  
+  /* Contenedor principal */
+  .container {
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Logo con efecto de brillo */
+  .logo h1 {
+    font-size: 4rem;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff0, 0 0 30px #ff0;
+    animation: glow 2s infinite alternate;
+  }
+  
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 10px #fff, 0 0 20px #ff0, 0 0 30px #ff0;
+    }
+    100% {
+      text-shadow: 0 0 20px #ff0, 0 0 30px #ffff00, 0 0 40px #ff0;
+    }
+  }
+  
+  /* Copos de nieve */
+  .snow {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .snowflake {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 5px white;
+    animation: fall linear infinite;
+  }
+  
+  /* Animación para los copos de nieve */
+  @keyframes fall {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100vh);
+    }
+  }
+  
+
+  /* Animación del movimiento del logo */
+@keyframes moveLogo {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(50px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .logo h1 {
+    font-size: 4rem;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff0, 0 0 30px #ff0;
+    animation: glow 2s infinite alternate, moveLogo 4s infinite;
+  }
+  
+
+  /* Estilo del contenedor de los fuegos artificiales */
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Estilo de las partículas */
+  .spark {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #ff0;
+    border-radius: 50%;
+    animation: explode 1s ease-out forwards;
+    top: 50%;
+    left: 50%;
+  }
+  
+  /* Animación de explosión */
+  @keyframes explode {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(0);
+      opacity: 0;
+    }
+  }
+  
+  /* Ajuste del tamaño de la imagen dentro del logo */
+.logo img {
+    width: 150px; /* Cambia el tamaño según lo que necesites */
+    height: auto; /* Mantén la proporción de la imagen */
+    display: inline-block; /* Asegura que se alinee correctamente */
+    margin: 0 auto; /* Centra si es necesario */
+  }
+  .texto {
+    font-size: 4rem;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff0, 0 0 30px #ff0;
+    animation: glow 2s infinite alternate;
+  }
+
+
+  /* Movimiento del texto */
+  @keyframes moveText {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(20px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Luces que caen de las letras */
+  @keyframes dropLights {
+    0% {
+      box-shadow: 0 0 10px #ff0, 0 0 20px #ff0, 0 0 30px rgba(255, 255, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 rgba(255, 255, 0, 0);
+    }
+  }
+  
+  /* Luces dinámicas que caen */
+  .texto::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 5px;
+    height: 10px;
+    background: #ff0;
+    border-radius: 50%;
+    animation: dropLightParticle 1s infinite ease-in-out;
+    opacity: 0;
+  }
+  
+  /* Partículas de luz cayendo */
+  @keyframes dropLightParticle {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+  }
+  
+
+  /* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #001f3f, #0074D9);
+  animation: gradient 10s infinite alternate;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column; /* Para que los elementos se apilen en dispositivos pequeños */
+}
+
+/* Logo */
+
+
+/* Imagen del logo */
+.logo img {
+  width: 250px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 2rem;
+  background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff0000);
+  animation: lucesNavidad 1s linear infinite;
+  
+}
+
+/* Borde animado simulando luces navideñas */
+.logo::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  padding: 5px;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff0000);
+  background-size: 300% 300%;
+  animation: lucesNavidad 3s linear infinite;
+  z-index: -1;
+}
+
+/* Animación del borde */
+@keyframes lucesNavidad {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+/* Texto */
+.texto h2,
+.texto h3 {
+  font-size: 2rem; /* Ajuste inicial para pantallas medianas */
+  margin: 0;
+  padding: 5px 0;
+  text-shadow: 0 0 10px #fff, 0 0 20px #ff0, 0 0 30px #ff0;
+  text-align: center;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  /* Pantallas de tablet */
+  .logo img {
+    width: 120px;
+
+  }
+  .texto h2,
+  .texto h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Pantallas de celular */
+  .logo img {
+    width: 100px;
+    height: auto;
+  }
+  .texto h2,
+  .texto h3 {
+    font-size: 1.5rem;
+  }
+}
+/* Asegura que el contenedor principal ocupe toda la pantalla */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Evita barras de desplazamiento */
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+
+/* Estrellas */
+.star {
+  position: absolute;
+  top: -10px;
+  width: 5px;
+  height: 5px;
+  background: radial-gradient(circle, #fff, rgba(255, 255, 255, 0));
+  border-radius: 50%;
+  animation: fallStar linear infinite;
+  z-index: 2; /* Aparece por encima de los copos de nieve */
+  background: radial-gradient(circle, #ffd700, rgba(255, 215, 0, 0));
+
+}
+
+/* Animación de las estrellas */
+@keyframes fallStar {
+  from {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100vh) translateX(20px);
+    opacity: 0;
+  }
+}
+
+
+/* Estrellas destellantes */
+.twinkling-star {
+  position: absolute;
+  top: -10px;
+  width: 7px;
+  height: 7px;
+  background: radial-gradient(circle, #fff, rgba(255, 255, 255, 0));
+  border-radius: 50%;
+  animation: fallStar linear infinite, twinkle 2s infinite;
+  z-index: 3;
+}
+
+/* Animación de destello */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* Fuegos artificiales */
+.firework {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #ff0000, rgba(255, 0, 0, 0));
+  border-radius: 50%;
+  animation: explode 1.5s ease-out forwards;
+  z-index: 1;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+
+/* Estilo general para el contenedor */
+.texto-festivo {
+  text-align: center;
+  margin: 20px 0;
+}
+.animated-text {
+  font-size: 3rem;
+  color: #fff;
+  animation: festiveGlow 1.5s infinite;
+  text-shadow: 0 0 5px #ff0000, 0 0 20px #ff6600, 0 0 15px #ffff00, 0 0 20px #ff6600, 0 0 30px #ff0000;
+
+  font-size: 2rem; /* Tamaño de fuente relativo */
+  font-style: italic; /* Texto en cursiva */
+  margin: 10px 0;
+}
+.prospero-año-nuevo {
+  font-size: 2.5rem;
+  font-style: italic;
+  margin: 10px 0;
+  text-transform: none;
+  text-decoration-color: #ff0000;
+  color: #fff;
+  animation: festiveGlow 1.5s infinite;
+  text-shadow: 0 0 5px #ff0000, 0 0 20px #2600ff, 0 0 15px #ffff00, 0 0 20px #ff6600, 0 0 30px #ff0000;
+}
+
+@keyframes festiveGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff6600, 0 0 15px #ffff00;
+  }
+  50% {
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ccff, 0 0 30px #6600ff;
+
+  };
+}
+
+
